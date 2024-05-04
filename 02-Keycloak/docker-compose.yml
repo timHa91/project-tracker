@@ -39,7 +39,7 @@ services:
       KC_HTTP_ENABLED: 'true'
       KC_METRICS_ENABLED: 'true'
       KC_HOSTNAME_URL: http://localhost:8180
-      KC_PROXY: reencrypt
+      KC_PROXY: edge
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: password
     ports:
@@ -47,8 +47,6 @@ services:
       - "8787:8787" # debug port
     networks:
       - local
-    volumes:
-      - ./my-test-realm-realm.json:/opt/keycloak/data/import/my-test-realm-realm.json
 
 networks:
   local:
